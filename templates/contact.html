@@ -1,0 +1,38 @@
+<div class="banner">
+    <img src="img/violet .jpg" alt=""/>
+    <h2>Vous êtes sur la page de contact</h2>
+</div>
+
+
+<p ma-directive></p>
+
+ 
+<form class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" ng-submit="testSubmit(contac)">
+  <div class="form-group">
+    <label for="contactName">Name</label>
+    <input type="text" class="form-control" id="contactName" placeholder="Name" name="contactName" ng-model="contac.name">
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="text" class="form-control" id="email" placeholder="Email" name="email" ng-model="contac.email" ng-pattern="'[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}'">
+     <div ng-show="form.email.$error.pattern">
+              email incorrect
+      </div>
+
+    <!--  ng-pattern="'[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}'"-->
+    
+  </div>
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea name="message" id="message" class="form-control" ng-model="contac.message"></textarea>
+  </div>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"  ng-model="contac.checked" ng-true-value="'YES'" ng-false-value="'NO'"> Check me out
+    </label>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <!-- <button type="click" class="btn btn-primary">Update</button> -->
+</form>

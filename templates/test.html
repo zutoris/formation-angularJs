@@ -1,0 +1,45 @@
+
+<pre>{{user}}</pre>
+
+
+<form name="form" class="form-group" novalidate>
+  
+    <label for="name">Name</label>
+    <input class="form-control" type="text" name="name" required="" ng-model="user.name">
+
+    <label for="email">E-mail</label>
+    <input class="form-control" type="email" name="email" required="" ng-model="user.email">
+
+    <input type="submit" class="btn btn-primary">
+
+
+    <div ng-show="form.$submitted || form.name.$touched">
+          <p ng-show="form.name.$error.required">
+            Whats your name duuude!!!
+          </p>
+    </div>
+
+    <div ng-show="form.$submitted || form.email.$touched">
+            <p ng-show="form.email.$error.required">Hmmm... Seems that you forgot something</p>
+            <p ng-show="form.email.$error.email">Wow! That's what you call a mail</p>
+    </div>
+
+</form>
+
+
+<div class="jumbotron">
+  <div style="padding:30px;border: 1px solid red">
+    <div ng-controller="TestController">
+      <p>Wesh {{who}}, {{what}}!</p>
+
+      <div style="padding:30px;border: 1px solid blue" ng-controller="ChildController">
+        <p>Wesh {{who}}, {{what}}!</p>
+
+        <div style="padding:30px;border: 1px solid green" ng-controller="GrandChildController">
+          <p>Wesh {{who}}, {{what}}!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
